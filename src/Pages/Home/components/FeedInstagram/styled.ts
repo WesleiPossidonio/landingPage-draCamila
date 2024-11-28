@@ -53,7 +53,7 @@ export const ContentFeedInstagram = styled.div`
     padding: 1rem;
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     grid-template-columns: repeat(auto-fit, minmax(8.625rem, 1fr));
   }
 
@@ -113,7 +113,7 @@ export const LinkPost = styled.div`
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: 425px) {
     img,
     video {
       height: 9rem;

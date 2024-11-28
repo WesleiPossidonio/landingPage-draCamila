@@ -94,6 +94,19 @@ export const ContainerText = styled.div`
 
   @media (max-width: 800px) {
     width: 100%;
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    gap: 0;
+
+    #containerSpan {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
   }
 `
 
@@ -103,11 +116,28 @@ export const ContainerSpan = styled.div`
   align-items: center;
   justify-content: space-evenly;
   gap: 3rem;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+
+    br {
+      display: none;
+    }
+  }
 `
 
 export const ContentSpan = styled(ContainerSpan)`
   justify-content: flex-start;
   gap: 0.7rem;
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+    align-items: center;
+  }
 `
 
 export const ContentNumber = styled.span`
