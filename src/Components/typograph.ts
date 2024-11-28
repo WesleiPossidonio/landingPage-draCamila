@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 interface RegularTextProps {
   size?: 'sm' | 'm' | 's' | 'l'
-  color?: 'text' | 'white' | 'bg' | 'red' | 'secundary-bg'
+  color?: 'text' | 'white' | 'bg' | 'red' | 'secundary-bg' | 'white-200'
   weight?: string | number
 }
 
 interface TitleTextProps {
   size?: 'm' | 's' | 'l' | 'xl'
-  color?: 'text' | 'white' | 'bg' | 'secundary-bg'
+  color?: 'text' | 'white' | 'bg' | 'secundary-bg' | 'white-200'
   weight?: string | number
 }
 

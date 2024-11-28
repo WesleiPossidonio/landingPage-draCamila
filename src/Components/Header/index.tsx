@@ -12,11 +12,15 @@ import {
 } from './styled'
 import { List, X } from '@phosphor-icons/react'
 import { Button } from '../Button'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [stateBackgroundHeader, setStateBackgroundHeader] =
     useState<boolean>(false)
+
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +40,16 @@ export const Header = () => {
     }
   }, [])
 
+  // Função para navegação e manipulação de âncoras
+  const handleNavigate = (path: string) => {
+    if (location.pathname !== '/') {
+      navigate(`/${path}`)
+    } else {
+      window.location.hash = path
+    }
+    if (isOpen) handleStateMenuMobile()
+  }
+
   const handleStateMenuMobile = () => {
     setIsOpen((open: boolean) => !open)
   }
@@ -53,17 +67,29 @@ export const Header = () => {
       )}
 
       <NavDesktop>
-        <NavLink stateHeader={stateBackgroundHeader} href="#home">
+        <NavLink
+          stateHeader={stateBackgroundHeader}
+          onClick={() => handleNavigate('#home')}
+        >
           Home
         </NavLink>
-        <NavLink stateHeader={stateBackgroundHeader} href="#about">
+        <NavLink
+          stateHeader={stateBackgroundHeader}
+          onClick={() => handleNavigate('#about')}
+        >
           Sobre Mim
         </NavLink>
 
-        <NavLink stateHeader={stateBackgroundHeader} href="#services">
+        <NavLink
+          stateHeader={stateBackgroundHeader}
+          onClick={() => handleNavigate('#services')}
+        >
           Serviços
         </NavLink>
-        <NavLink stateHeader={stateBackgroundHeader} href="#contact">
+        <NavLink
+          stateHeader={stateBackgroundHeader}
+          onClick={() => navigate('/contatos')}
+        >
           Contatos
         </NavLink>
         <Button bgColor="secundary-bg" btnLarge={false}>
@@ -74,19 +100,19 @@ export const Header = () => {
       </NavDesktop>
 
       <NavMobile isOpen={isOpen}>
-        <NavLinkMobile href="#home" onClick={handleStateMenuMobile}>
+        <NavLinkMobile onClick={() => handleNavigate('#home')}>
           Home
         </NavLinkMobile>
 
-        <NavLinkMobile href="#about" onClick={handleStateMenuMobile}>
+        <NavLinkMobile onClick={() => handleNavigate('#about')}>
           Sobre Mim
         </NavLinkMobile>
 
-        <NavLinkMobile href="#principes" onClick={handleStateMenuMobile}>
+        <NavLinkMobile onClick={() => handleNavigate('#services')}>
           Serviços
         </NavLinkMobile>
 
-        <NavLinkMobile href="#Contatos" onClick={handleStateMenuMobile}>
+        <NavLinkMobile onClick={() => navigate('/contatos')}>
           Contatos
         </NavLinkMobile>
 

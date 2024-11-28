@@ -1,21 +1,18 @@
+import { ListServices } from '../../Components/ListServices'
 import {
   About,
   AboutService,
   CallAction,
   Faq,
   FeedInstagram,
-  Footer,
-  Header,
   Hero,
   SectionDra,
   ServicesSection,
-} from '../../Components'
-import { ListServices } from '../../Components/ListServices'
+} from './components'
 
 export const Home = () => {
   return (
     <>
-      <Header />
       <Hero />
       <About />
       <ServicesSection listService={ListServices} />
@@ -24,7 +21,6 @@ export const Home = () => {
       <FeedInstagram />
       <Faq />
       <SectionDra />
-      <Footer />
     </>
   )
 }

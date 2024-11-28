@@ -14,7 +14,7 @@ export const GlobalStyled = createGlobalStyle`
 html {
   scroll-behavior: smooth;
   @media (max-width: 1024px) {
-    font-size: 90.5%;
+    font-size: 95.5%;
   }
 }
 `
